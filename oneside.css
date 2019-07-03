@@ -13,11 +13,12 @@ nav{
     padding: 10px;
     text-align: justify;
     font-size: 20px;
+
 }
 
 ul{
     align-items: center;
-    width: 1000px;   
+    width: 60%;   
     margin-left: auto;
     margin-right: auto;
 }
@@ -42,6 +43,29 @@ main{
     margin-right: auto;
 }
 
-#art1, #art2{
+#kon{
+    border: 2px dashed #228822;
+}
+
+#art1, #art2, #tab{
     display: none;
 }
+
+#tabela tr:first-child{
+    font-weight: bold;
+}
+
+#tabela {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: #999999;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ #tabela td {
+    border: 1px solid black;
+    padding: 5px;
+ }
+
+
+
