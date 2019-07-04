@@ -5,40 +5,23 @@ fetch("http://127.0.0.1:3000/users")
 
     let tabela = document.getElementById("tabela")
     let nowyWiersz = tabela.insertRow();
-    let imie = nowyWiersz.insertCell(0);
-    let firma = nowyWiersz.insertCell(1);
-    let email = nowyWiersz.insertCell(2);
-    let telefon = nowyWiersz.insertCell(3);
-    let owoc = nowyWiersz.insertCell(4);
 
-    imie.innerHTML = "Imię";
-    firma.innerHTML = "Nazwa firmy";
-    email.innerHTML = "Adres e-mail";
-    telefon.innerHTML = "Numer telefonu";
-    owoc.innerHTML = "Ulubiony owoc";
+    //generowanie i wypełnianie nagłówków wyświetlanej tabeli
+    let naglowek = ["Imię", "Nazwa firmy", "Adres e-mail", "Numer telefonu", "Ulubiony owoc"];
 
+    for(const i in naglowek){            
+        nowyWiersz.insertCell(i).innerHTML = naglowek[i];
+    }
     
     for(let osoba of data){
         let nowyW = tabela.insertRow();
-        let imie = nowyW.insertCell(0);
-        let firma = nowyW.insertCell(1);
-        let email = nowyW.insertCell(2);
-        let telefon = nowyW.insertCell(3);
-        let owoc = nowyW.insertCell(4);
 
-        imie.innerHTML = osoba.name;
-        firma.innerHTML = osoba.company;
-        email.innerHTML = osoba.email;
-        telefon.innerHTML = osoba.phone;
-        owoc.innerHTML = osoba.favoriteFruit;
+        //generowanie i wypełnianie komórek wyświetlanej tabeli
+        let klucz = [osoba.name, osoba.company, osoba.email, osoba.phone, osoba.favoriteFruit];
 
-        // for(let kolumna in tabela){
-        //   let komorka = nowyWiersz.insertCell(kolumna);
-        //   komorka.innerHTML = tabela[kolumna];
-        //   return nowyWiersz
-        // }
-
-        // osoba.innerHTML = nowyWiersz;
+        for(const i in klucz){            
+            nowyW.insertCell(i).innerHTML = klucz[i];
+        }
     }
 
 });
