@@ -1,30 +1,42 @@
-fetch("http://127.0.0.1:3000/users")
-    .then((resp) => resp.json())
-    .then(function(data){ 
 
-
-    let tabela = document.getElementById("tabela")
+function generatorTabeli(data, naglowki, klucze, idTabeli){
+    
+    let tabela = document.getElementById(idTabeli);
     let nowyWiersz = tabela.insertRow();
 
     //generowanie i wypełnianie nagłówków wyświetlanej tabeli
-    let naglowek = ["Imię", "Nazwa firmy", "Adres e-mail", "Numer telefonu", "Ulubiony owoc"];
-
-    for(const i in naglowek){            
-        nowyWiersz.insertCell(i).innerHTML = naglowek[i];
+    for(const i in naglowki){            
+        nowyWiersz.insertCell(i).innerHTML = naglowki[i];
     }
     
     for(let osoba of data){
         let nowyW = tabela.insertRow();
 
         //generowanie i wypełnianie komórek wyświetlanej tabeli
-        let klucz = [osoba.name, osoba.company, osoba.email, osoba.phone, osoba.favoriteFruit];
 
-        for(const i in klucz){            
-            nowyW.insertCell(i).innerHTML = klucz[i];
+        for(const [i, klucz] of klucze.entries()){            
+            nowyW.insertCell(i).innerHTML = osoba[klucz];
         }
     }
+}
 
-});
+
+function wywolanieFetch (adresUrl){
+    return fetch(adresUrl)
+        .then(resp => resp.json())
+};
+
+function pobierzIWyswietl (){
+    wywolanieFetch("http://127.0.0.1:3000/users")
+        .then(function(data){ 
+            generatorTabeli(
+                data,
+                ["Imię", "Nazwa firmy", "Adres e-mail", "Numer telefonu", "Ulubiony owoc"], 
+                ["name", "company", "email", "phone", "favoriteFruit"], 
+                "tabela"
+            );
+        });
+}
 
 function pokazTresc(NazwaZakladki){
     let kontakt = document.getElementById("kontakt");
@@ -75,3 +87,5 @@ function pokazTresc(NazwaZakladki){
             kon.style.border = "2px dashed black";
     }
 }
+
+pobierzIWyswietl()
