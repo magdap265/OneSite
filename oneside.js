@@ -21,13 +21,13 @@ function generatorTabeli(data, naglowki, klucze, idTabeli){
 }
 
 
-function wywolanieFetch (adresUrl){
+function wywolanieGet (adresUrl){
     return fetch(adresUrl)
         .then(resp => resp.json())
 };
 
 function pobierzIWyswietl (){
-    wywolanieFetch("http://127.0.0.1:3000/users")
+    wywolanieGet("http://127.0.0.1:3000/users")
         .then(function(data){ 
             generatorTabeli(
                 data,
@@ -37,6 +37,30 @@ function pobierzIWyswietl (){
             );
         });
 }
+
+function daneDoWyslania (){
+    console.log("jestem tutaj");
+    fetch("http://127.0.0.1:3000/users", {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify({
+            "name": document.querySelector("#name").value,
+            "company": document.querySelector("#company").value,
+            "email": document.querySelector("#email").value, 
+            "phone": document.querySelector("#phone").value, 
+            "favoriteFruit": document.querySelector("#favouriteFruit").value,
+            "gender": document.querySelector("#gender").value
+        }), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      .catch(error => console.error('Error:', error));
+}
+
+// function dodajDoBazy () {
+
+// }
 
 function pokazTresc(NazwaZakladki){
     let kontakt = document.getElementById("kontakt");
