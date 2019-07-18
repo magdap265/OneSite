@@ -1,71 +1,32 @@
 body{
-    background-color: #777777;
+    background: url(img/background.png);
     margin: 0;
-
-}
-
-nav{
-    background-color: #333333;
-    color: #999999;
-    list-style-type: none;
-    width: 100% !important;
-    margin-top: 0px; 
-    padding: 10px;
-    text-align: justify;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
 
 }
 
-ul{
-    align-items: center;
-    width: 60%;   
-    margin-left: auto;
-    margin-right: auto;
-}
-
-li{
-    display: inline;
-    border: 2px dashed black;
-    margin: 10px;
-    text-align: justify;
-    letter-spacing: 1px;
-    padding: 10px;
-    
-}
-
-li:hover{
-    cursor: pointer;
-}
-
 main{
-    width: 1000px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 15px;
+    text-align: justify;
 }
 
-#kon{
-    border: 2px dashed #228822;
-}
+/* niewidoczność stron przed ich kliknięciem*/
 
 #art1, #art2, #tab{
     display: none;
 }
 
-#tabela tr:first-child{
-    font-weight: bold;
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    margin-top: 10px;
+    color: white;
+    background-color: #333;
+    /* background: linear-gradient(transparent, 10%, black 100px);     */
+    bottom: 0;
 }
-
-#tabela {
-    border: 1px solid black;
-    border-collapse: collapse;
-    background-color: #999999;
-    margin-left: auto;
-    margin-right: auto;
- }
- #tabela td {
-    border: 1px solid black;
-    padding: 5px;
- }
-
-
-

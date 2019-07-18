@@ -1,0 +1,51 @@
+#formularz{
+    width: 200px;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 30px 100px;
+    margin-bottom: 50px;
+    box-shadow: 15px 15px 18px 5px #333;
+    background: rgba(196, 196, 196, 0.4);
+}
+
+.form{
+    padding: 3px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    background-color: #aaa;
+    text-align: center;
+    width: 200px;
+    display: list-item;
+}
+
+button{
+    background-color: #007700;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100px;
+    border:1px solid #005500;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #228822;
+    border: 1px solid #004400;
+}
+
+#submit{
+    text-align: center;
+}
+
+label{
+    font-size: 15px;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,82 @@
+.kafelek{
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    font-size: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.kafelek:hover{
+    cursor: pointer;
+    color: #ddd !important;
+}
+
+#o-mnie{
+    background: rgba(0,0,0, 0.75);
+    color: #ddd;
+    height: 200px;
+    width: 826px;
+    border: 3px dotted black;
+    border-spacing: 3px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    padding: 20px;
+}
+
+#kontakt{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#mail{
+    border: 1px solid #b23121;
+    color: #b23121;
+}
+
+#mail:hover{
+    background: rgba(212, 70, 56, 0.75);
+
+}
+
+#fb{
+    border: 1px solid #29487d;
+    color: #29487d;
+}
+
+#fb:hover{
+    background: rgba(66, 103, 178, 0.75);
+
+}
+
+#ig{
+    border: 1px solid #333;
+    color: #333
+}
+
+#ig:hover{
+    background: rgba(85,85,85, 0.75);
+}
+
+#tel{
+    border: 1px solid #226622;
+    color: #226622;
+}
+
+#tel:hover{
+    background: rgba(34, 136, 34, 0.75);
+}
+
+#dTel{
+    display: none;
+    margin-top: 80px;
+    font-size: 23px;
+}

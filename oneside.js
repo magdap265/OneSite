@@ -58,17 +58,38 @@ function daneDoWyslania (){
       .catch(error => console.error('Error:', error));
 }
 
-// function dodajDoBazy () {
 
-// }
+    // var strony = document.getElementsByClassName("zakl");
+    // for (strona of strony) {
+    //     strona.addEventListener("click", function() {
+    //         var current = document.getElementsByClassName("activeZ");
+    //         current[0].className = current[0].className.replace(" activeZ", "");
+    //         this.className += " activeZ";
+    //     });
 
+    // var strony = document.getElementsByTagName("main");
+    // for (strona of strony) {
+    //     strona.addEventListener("click", function() {
+    //     klikniete = document.getElementsByClassName("activeS");
+    //     klikniete[0].className = klikniete[0].className.replace(" activeS", " ");
+    //     this.className += " activeS";
+    //     });
+    //     }
 function pokazTresc(NazwaZakladki){
+
     let kontakt = document.getElementById("kontakt");
     let artykul1 = document.getElementById("art1");
     let artykul2 = document.getElementById("art2");
     let tabela = document.getElementById("tab");  
 
-
+    // while(klikniete.className != "active"){
+    //     klikniete.className.replace("not-active", "active");
+    //     if(document.getElementsByClassName("active") != "klikniete"){
+    //         document.getElementsByClassName("active").className.replace("active", "not-active");
+    //         console.log(document.getElementsByClassName("active"))
+    //     } 
+    // }
+    
     switch(NazwaZakladki){
         case kontakt:
             kontakt.style.display = "block"; 
@@ -112,4 +133,16 @@ function pokazTresc(NazwaZakladki){
     }
 }
 
-pobierzIWyswietl()
+function klikKontakt(){
+    
+    const iconTel = document.getElementById("iTel");
+    const phoneNumber = document.getElementById("dTel");
+    if(phoneNumber.style.display == "none"){
+        phoneNumber.style.display = "block";
+        iconTel.style.display = "none";
+    } else {
+        phoneNumber.style.display = "none";
+        iconTel.style.display = "block";
+    }
+}
+

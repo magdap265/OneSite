@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -5,48 +6,85 @@
     <title>Strona</title>
     <script src="oneside.js"></script>
     <link href="oneside.css" rel="stylesheet" type="text/css"/>
+    <link href="table.css" rel="stylesheet" type="text/css"/>
+    <link href="nav.css" rel="stylesheet" type="text/css"/>
+    <link href="form.css" rel="stylesheet" type="text/css"/>
+    <link href="kontakt.css" rel="stylesheet" type="text/css"/>
+    <link href="fontello/css/fontello.css" rel="stylesheet" type="text/css"/>
+
+
 </head>
 
-<!-- onload="pobierzIWyswietl()" -->
+<!-- onload="" -->
 <body >
-    <nav>
+    <nav id="nawigacja">
         <ul>
-            <li id="kon" onclick="pokazTresc(kontakt)">kontakt</li>
-            <li id="a1" onclick="pokazTresc(art1)">Artykuł o czymś</li>
-            <li id="a2" onclick="pokazTresc(art2)">Artykuł o niczym</li>
-            <li id="t" onclick="pokazTresc(tab)" style="clear: both;">Dane z JSON'a</li>
+            <li id="kon" class="active" onclick="pokazTresc(kontakt)">kontakt</li>
+            <li id="a1" class="not-active" onclick="pokazTresc(art1)">Artykuł o czymś</li>
+            <li id="a2" class="not-active" onclick="pokazTresc(art2)">Artykuł o niczym</li>
+            <li id="t" class="not-active" onclick="pokazTresc(tab); pobierzIWyswietl()" style="clear: both;">Dane z JSON'a</li>
         </ul>
     </nav>
 <br>
-    <main>
+    <main >
 
-        <div id="kontakt">
-            <p>Aliquam sed semper velit, vel gravida arcu. Aenean tristique felis ut posuere sodales. Duis sit amet tempor lacus, hendrerit faucibus turpis. Pellentesque id risus nisi. Vivamus et ante aliquet, hendrerit est eu, scelerisque felis. Aliquam rutrum blandit efficitur. Duis varius ac nisi sit amet pellentesque.</p>
+        <div class="actives" id="kontakt">
+            <div id="o-mnie">Aliquam sed semper velit, vel gravida arcu. Aenean tristique felis ut posuere sodales. Duis sit amet tempor lacus, hendrerit faucibus turpis. Pellentesque id risus nisi. Vivamus et ante aliquet, hendrerit est eu, scelerisque felis. Aliquam rutrum blandit efficitur. Duis varius ac nisi sit amet pellentesque.</div>
+            <a href="https://mail.google.com" target="blanc">
+                <div id="mail" class="kafelek"><i class="icon-email"></i></div>
+            </a>
+            <a href="https://facebook.com" target="blanc">
+                <div id="fb" class="kafelek"><i class="icon-facebook"></i></div>
+            </a>
+            <a href="https://instagram.com" target="blanc">
+                <div id="ig" class="kafelek"><i class="icon-instagram"></i></div>
+            </a>
+            <div id="tel" class="kafelek">
+                <i id="iTel" class="icon-phone" onclick="klikKontakt()"></i>
+                <div id="dTel" style="display: none" onclick="klikKontakt()">(+48) 500 200 300</div>
+            </div>
+            <div style="clear: both;"></div>
         </div>
 
-        <article id="art1">
+        <article class="not-actives" id = "art1" >
             <p>Cras non libero non nisl facilisis iaculis non vitae lorem. Vivamus id mauris tristique diam sodales dapibus. Aenean elementum, lectus eget consectetur tincidunt, nulla ligula bibendum urna, vitae aliquet lorem nulla sit amet nisi. Nulla vel odio sit amet nisi gravida convallis a id est. Fusce ultricies faucibus nisl, nec blandit neque rhoncus sed. Nullam mauris lacus, congue eu ullamcorper ac, efficitur non leo. Nulla nisl erat, placerat at luctus sit amet, mollis nec leo. Donec non laoreet nisl, varius sollicitudin massa. Nullam feugiat arcu quis hendrerit dignissim. Donec magna augue, molestie quis tellus a, venenatis posuere nibh.</p>
         </article>
 
-        <article id="art2">
+        <article class="not-actives" id="art2">
             <p>Suspendisse potenti. Nullam efficitur lectus at interdum feugiat. Maecenas fermentum ipsum sollicitudin, fermentum nibh vitae, hendrerit nulla. Maecenas et diam erat. Donec mattis magna a purus congue vulputate. Quisque a volutpat dui, ut scelerisque nulla. Pellentesque dignissim, dui in tempor auctor, enim nibh ultricies ante, a tincidunt enim diam sed mi. Etiam velit ipsum, sodales in ultrices sit amet, blandit elementum lacus. Praesent porttitor eget justo ut sagittis. Etiam felis arcu, rhoncus non leo eget, malesuada faucibus ex.</p>
         </article>
 
-        <div id="tab">
-            <table id="tabela"></table>
+        <div class="not-actives" id="tab">
             <!-- <form> -->
-                <input type="text" value="imię" id="name"/> <br/>
-                <input type="text" value="e-mail" id="email"> <br/>
-                <input type="text" value="płeć" id="gender"/> <br/>
-                <input type="text" value="firma" id="company"/> <br/>
-                <input type="text" value="nr telefonu" id="phone"/> <br/>
-                <input type="text" value="ulubiony owoc" id="favouriteFruit"/> <br/>
-
-                <button type="submit" onclick="daneDoWyslania()">Dodaj</button>
-            <!-- </form> -->
+            <div id="formularz">
+                <h3>Wprowadź dane aby dodać osobę do listy.</h3> 
+                <label>Imię i nazwisko</label>                            
+                <input type="text" placeholder="imię i nzwisko" id="name" class="form"/>
+                <label>Firma</label>
+                <input type="text" placeholder="firma" id="company" class="form"/>
+                <label>e-mail</label>
+                <input type="email" placeholder="e-mail" id="email" class="form">
+                <label>Numer telefonu</label>
+                <input type="tel" placeholder="nr telefonu" id="phone" class="form"/>
+                <label>Ulubiony owoc</label>
+                <input type="text" placeholder="ulubiony owoc" id="favouriteFruit" class="form"/>
+                <label>Płeć</label>
+                <select id="gender" class="form">
+                    <option> </option>
+                    <option>kobieta</option>
+                    <option>mężczyzna</option>
+                </select>
+                <div id="submit">
+                    <button type="submit" onclick="daneDoWyslania()">Dodaj</button>
+                </div>
+            </div>
+            <table id="tabela"></table>
         </div>
     </main>
 
+    <footer>
+        &copy; 2019 Magda
+    </footer>
 </body>
 
 </html>
