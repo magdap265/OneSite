@@ -1,17 +1,28 @@
-#tabela tr:first-child{
+ #tabela tr:first-child{
     font-weight: bold;
 }
 
+#tabela tr:first-child td{
+    border-bottom: 2px solid black;
+}
+
+#tabela tr:last-child td{
+    border-bottom: transparent;
+}
+
 #tabela {
-    border: 1px solid #333;
-    border-radius: 3px;
-    border-collapse: collapse;
-    background-color: #aba;
+    background-color:rgba(88, 88, 88, 0.5);
     margin-left: auto;
     margin-right: auto;
- }
- #tabela td {
-    border: 1px solid #333;
-    padding: 5px;
+    margin-bottom: 50px;
+    border-spacing: 0;
+    font-size: 12px;
+    
+}
+
+#tabela td {
+    padding: 15px;
+    border-bottom: 1px dotted #333;
+
  }
 

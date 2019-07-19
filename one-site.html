@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Strona</title>
-    <script src="oneside.js"></script>
-    <link href="oneside.css" rel="stylesheet" type="text/css"/>
+    <script src="onesite.js"></script>
+    <link href="onesite.css" rel="stylesheet" type="text/css"/>
     <link href="table.css" rel="stylesheet" type="text/css"/>
     <link href="nav.css" rel="stylesheet" type="text/css"/>
     <link href="form.css" rel="stylesheet" type="text/css"/>
@@ -22,40 +22,44 @@
             <li id="kon" class="active" onclick="pokazTresc(kontakt)">kontakt</li>
             <li id="a1" class="not-active" onclick="pokazTresc(art1)">Artykuł o czymś</li>
             <li id="a2" class="not-active" onclick="pokazTresc(art2)">Artykuł o niczym</li>
-            <li id="t" class="not-active" onclick="pokazTresc(tab); pobierzIWyswietl()" style="clear: both;">Dane z JSON'a</li>
+            <li id="t" class="not-active" onclick="pobierzIWyswietl(); pokazTresc(tab)" style="clear: both;">Dane z JSON'a</li>
         </ul>
     </nav>
 <br>
     <main >
 
-        <div class="actives" id="kontakt">
-            <div id="o-mnie">Aliquam sed semper velit, vel gravida arcu. Aenean tristique felis ut posuere sodales. Duis sit amet tempor lacus, hendrerit faucibus turpis. Pellentesque id risus nisi. Vivamus et ante aliquet, hendrerit est eu, scelerisque felis. Aliquam rutrum blandit efficitur. Duis varius ac nisi sit amet pellentesque.</div>
-            <a href="https://mail.google.com" target="blanc">
-                <div id="mail" class="kafelek"><i class="icon-email"></i></div>
-            </a>
-            <a href="https://facebook.com" target="blanc">
-                <div id="fb" class="kafelek"><i class="icon-facebook"></i></div>
-            </a>
-            <a href="https://instagram.com" target="blanc">
-                <div id="ig" class="kafelek"><i class="icon-instagram"></i></div>
-            </a>
-            <div id="tel" class="kafelek">
-                <i id="iTel" class="icon-phone" onclick="klikKontakt()"></i>
-                <div id="dTel" style="display: none" onclick="klikKontakt()">(+48) 500 200 300</div>
+        <div class="actives str" id="kontakt">
+            <div id="o-mnie"><p>Aliquam sed semper velit, vel gravida arcu. Aenean tristique felis ut posuere sodales. Duis sit amet tempor lacus, hendrerit faucibus turpis. Pellentesque id risus nisi. Vivamus et ante aliquet, hendrerit est eu, scelerisque felis. Aliquam rutrum blandit efficitur. Duis varius ac nisi sit amet pellentesque.</p></div>
+            <div id="socialDivs">
+                <a href="https://mail.google.com" target="blanc">
+                    <div id="mail" class="kafelek"><i class="icon-email" style="margin-top:70px"></i></div>
+                </a>
+                <a href="https://facebook.com" target="blanc">
+                    <div id="fb" class="kafelek"><i class="icon-facebook"></i></div>
+                </a>
+                <a href="https://instagram.com" target="blanc">
+                    <div id="ig" class="kafelek"><i class="icon-instagram"></i></div>
+                </a>
+                <div id="tel" class="kafelek" onclick="klikKontakt()">
+                    <i id="iTel" class="icon-phone" ></i>
+                    <div id="dTel" style="display: none">(+48) 500 200 300</div>
+                </div>
+                <div style="clear: both;"></div>
             </div>
-            <div style="clear: both;"></div>
         </div>
 
-        <article class="not-actives" id = "art1" >
+        <article class="not-actives str" id = "art1" >
             <p>Cras non libero non nisl facilisis iaculis non vitae lorem. Vivamus id mauris tristique diam sodales dapibus. Aenean elementum, lectus eget consectetur tincidunt, nulla ligula bibendum urna, vitae aliquet lorem nulla sit amet nisi. Nulla vel odio sit amet nisi gravida convallis a id est. Fusce ultricies faucibus nisl, nec blandit neque rhoncus sed. Nullam mauris lacus, congue eu ullamcorper ac, efficitur non leo. Nulla nisl erat, placerat at luctus sit amet, mollis nec leo. Donec non laoreet nisl, varius sollicitudin massa. Nullam feugiat arcu quis hendrerit dignissim. Donec magna augue, molestie quis tellus a, venenatis posuere nibh.</p>
         </article>
 
-        <article class="not-actives" id="art2">
+        <article class="not-actives str" id="art2">
             <p>Suspendisse potenti. Nullam efficitur lectus at interdum feugiat. Maecenas fermentum ipsum sollicitudin, fermentum nibh vitae, hendrerit nulla. Maecenas et diam erat. Donec mattis magna a purus congue vulputate. Quisque a volutpat dui, ut scelerisque nulla. Pellentesque dignissim, dui in tempor auctor, enim nibh ultricies ante, a tincidunt enim diam sed mi. Etiam velit ipsum, sodales in ultrices sit amet, blandit elementum lacus. Praesent porttitor eget justo ut sagittis. Etiam felis arcu, rhoncus non leo eget, malesuada faucibus ex.</p>
         </article>
 
-        <div class="not-actives" id="tab">
-            <!-- <form> -->
+        <div class="not-actives str" id="tab">
+            <table id="tabela"></table>
+            
+            <!-- <form method="POST" target="_self"> -->
             <div id="formularz">
                 <h3>Wprowadź dane aby dodać osobę do listy.</h3> 
                 <label>Imię i nazwisko</label>                            
@@ -76,14 +80,16 @@
                 </select>
                 <div id="submit">
                     <button type="submit" onclick="daneDoWyslania()">Dodaj</button>
+                    <!-- <button type="submit" onclick="pobierzIWyswietl()">Aktualizuj tabelę</button> -->
+
                 </div>
             </div>
-            <table id="tabela"></table>
+            <!-- </form> -->
         </div>
     </main>
 
     <footer>
-        &copy; 2019 Magda
+        <p>OneSide &copy; 2019 Magda</p>
     </footer>
 </body>
 

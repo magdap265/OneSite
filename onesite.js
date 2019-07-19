@@ -20,21 +20,29 @@ function generatorTabeli(data, naglowki, klucze, idTabeli){
     }
 }
 
+function wyczyscElement (idElementu){
+    let element = document.getElementById(idElementu);
+    element.innerHTML= "";
+}
+
 
 function wywolanieGet (adresUrl){
     return fetch(adresUrl)
         .then(resp => resp.json())
 };
 
+function aktualizacjaTabeli (data, naglowki, klucze, idTabeli){
+    wyczyscElement(idTabeli);
+    generatorTabeli(data, naglowki, klucze, idTabeli);
+}
+
 function pobierzIWyswietl (){
     wywolanieGet("http://127.0.0.1:3000/users")
-        .then(function(data){ 
-            generatorTabeli(
-                data,
+        .then(function(data){
+            aktualizacjaTabeli(data,
                 ["Imię", "Nazwa firmy", "Adres e-mail", "Numer telefonu", "Ulubiony owoc"], 
                 ["name", "company", "email", "phone", "favoriteFruit"], 
-                "tabela"
-            );
+                "tabela")
         });
 }
 
@@ -57,6 +65,11 @@ function daneDoWyslania (){
       .then(response => console.log('Success:', JSON.stringify(response)))
       .catch(error => console.error('Error:', error));
 }
+
+// function aktualualizujDane(){
+//     fetch("http://127.0.0.1:3000/users", {
+//     }
+// }
 
 
     // var strony = document.getElementsByClassName("zakl");

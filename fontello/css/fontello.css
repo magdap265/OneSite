@@ -56,8 +56,8 @@
 }
  
 .icon-gmail:before { content: '\e800';} /* '' */
-.icon-email:before { content: '\e801'; margin-top: 70px;} /* '' */
-.icon-phone:before { content: '\e802'; margin-top: 70px;} /* '' */
+.icon-email:before { content: '\e801';} /* '' */
+.icon-phone:before { content: '\e802';} /* '' */
 .icon-mail:before { content: '\e803';} /* '' */
-.icon-facebook:before { content: '\f09a'; margin-top: 70px;} /* '' */
-.icon-instagram:before { content: '\f32d'; margin-top: 70px;} /* '' */
+.icon-facebook:before { content: '\f09a';} /* '' */
+.icon-instagram:before { content: '\f32d';} /* '' */

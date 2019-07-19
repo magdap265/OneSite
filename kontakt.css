@@ -1,14 +1,56 @@
-.kafelek{
-    width: 200px;
-    height: 200px;
-    float: left;
-    margin: 10px;
+#kontakt{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    font-size: 50px;
 }
 
-a{
+#o-mnie{
+    background: rgba(0,0,0, 0.75);
+    color: #ddd;
+    min-height: 150px;
+    width: 100%;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#o-mnie p{
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+}
+
+#socilDivs {
+    text-align: justify;
+    width: 100%;
+    display: flex;
+}
+
+#socialDivs a{
     text-decoration: none;
+}
+
+.kafelek{
+    width: 24%;
+    height: 200px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 1%;
+    text-align: center;
+    font-size: 50px;
+    /* flex-wrap: wrap; */
+}
+
+#mail{
+    margin-left: 0;
+}
+
+.kafelek i{
+    position: relative;
+    top:70px;
+    font-size: 50px;
 }
 
 .kafelek:hover{
@@ -16,26 +58,7 @@ a{
     color: #ddd !important;
 }
 
-#o-mnie{
-    background: rgba(0,0,0, 0.75);
-    color: #ddd;
-    height: 200px;
-    width: 826px;
-    border: 3px dotted black;
-    border-spacing: 3px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 10px;
-    padding: 20px;
-}
 
-#kontakt{
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
 
 #mail{
     border: 1px solid #b23121;
@@ -76,7 +99,26 @@ a{
 }
 
 #dTel{
-    display: none;
     margin-top: 80px;
     font-size: 23px;
+}
+
+@media screen and (max-width: 500px) {
+    #o-mnie{
+        min-height: 200px;
+        max-width: 400px;
+       font-size: 12px;
+        
+    }
+
+    .kafelek{
+        width: 100px;
+        height: 100px;
+    }
+
+    .kafelek i{
+        top: 15px;
+        font-size: 25px;
+    }
+    
 }

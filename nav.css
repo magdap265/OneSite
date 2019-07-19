@@ -2,13 +2,14 @@ nav{
     background: rgba(100, 100, 100, 0.9);
     color: #fff;
     list-style-type: none;
-    width: 100% ;
-    margin-top: 0px; 
+    width: 100vw;
+    margin: 0 0 50px 0;      
     padding: 10px;
     text-align: justify;
     font-size: 20px;
-    margin-bottom: 50px;
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
 }
 
 ul{
@@ -19,7 +20,7 @@ ul{
 }
 
 li{
-    display: inline;
+    display: inline-block;
     border: 2px dashed black;
     margin: 10px;
     text-align: justify;
@@ -35,3 +36,12 @@ li:hover{
 #kon{
     border: 2px dashed #005500;
 }
+
+@media screen and (max-width: 500px) {
+   nav ul li{
+       font-size: 15px;
+       display: block;
+       margin: 5px;
+       max-width: 200px;
+   }
+  }

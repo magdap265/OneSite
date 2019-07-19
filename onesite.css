@@ -1,17 +1,29 @@
-body{
+*{
+    margin: 0;
+}
+
+html body{
+    width: 100vw;
     background: url(img/background.png);
     margin: 0;
+    padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
-
+    text-align: center;
+    overflow: auto;
+    overflow-x: hidden;
+    
 }
 
 main{
-    width: 900px;
+    width: 80%; 
     margin-left: auto;
     margin-right: auto;
     font-size: 15px;
-    text-align: justify;
+    text-align: center;
+    min-height: 700px;
+    height: 100%;
+    
 }
 
 /* niewidoczność stron przed ich kliknięciem*/
@@ -28,5 +40,27 @@ footer{
     color: white;
     background-color: #333;
     /* background: linear-gradient(transparent, 10%, black 100px);     */
-    bottom: 0;
+    font-size: 15px;
+    margin-bottom: 0;
+    display:flex;
+
+}
+
+footer p{
+    margin: auto auto;
+}
+
+@media screen and (max-width: 500px) {
+   body{
+       font-size: 8px;
+       max-width: 600px;
+       overflow: auto;
+   }
+   main, footer{
+    max-width: 500px;
+   }
+
+   .str {
+        text-align:justify;
+   }
 }
