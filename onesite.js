@@ -66,79 +66,62 @@ function daneDoWyslania (){
       .catch(error => console.error('Error:', error));
 }
 
-// function aktualualizujDane(){
-//     fetch("http://127.0.0.1:3000/users", {
-//     }
-// }
 
-
-    // var strony = document.getElementsByClassName("zakl");
-    // for (strona of strony) {
-    //     strona.addEventListener("click", function() {
-    //         var current = document.getElementsByClassName("activeZ");
-    //         current[0].className = current[0].className.replace(" activeZ", "");
-    //         this.className += " activeZ";
+    // let zakladki = document.getElementsByClassName("przycisk");
+    // for (zakladka of zakladki) {
+    //     console.log(zakladka);
+    //     zakladka.addEventListener("click", function() {
+    //         var current = document.getElementsByClassName("active");
+    //         current[0].className = current[0].className.replace(" active", "");
+    //         this.className += " active";
+    //         console.log(this.id);
     //     });
+    // }
 
-    // var strony = document.getElementsByTagName("main");
-    // for (strona of strony) {
-    //     strona.addEventListener("click", function() {
-    //     klikniete = document.getElementsByClassName("activeS");
-    //     klikniete[0].className = klikniete[0].className.replace(" activeS", " ");
-    //     this.className += " activeS";
-    //     });
-    //     }
+    function aktualizujWidok(zakladki, aktywna) {
+        zakladki.forEach(zakladka => {
+            if(zakladka.id === aktywna){
+                let elementDoWyswietlenia = document.getElementById(aktywna);
+                elementDoWyswietlenia.style.display = "block";
+            } else {
+                let elementDoWyswietlenia = document.getElementById(zakladka.id);
+                elementDoWyswietlenia.style.display = "none";
+            }
+        });
+    }
+    
 function pokazTresc(NazwaZakladki){
 
     let kontakt = document.getElementById("kontakt");
     let artykul1 = document.getElementById("art1");
     let artykul2 = document.getElementById("art2");
     let tabela = document.getElementById("tab");  
-
-    // while(klikniete.className != "active"){
-    //     klikniete.className.replace("not-active", "active");
-    //     if(document.getElementsByClassName("active") != "klikniete"){
-    //         document.getElementsByClassName("active").className.replace("active", "not-active");
-    //         console.log(document.getElementsByClassName("active"))
-    //     } 
-    // }
+    let tab = [kontakt, artykul1, artykul2, tabela];
     
     switch(NazwaZakladki){
         case kontakt:
-            kontakt.style.display = "block"; 
-            artykul1.style.display = "none";
-            artykul2.style.display = "none";
-            tabela.style.display = "none";
             kon.style.border = "2px dashed #228822";
             a1.style.border = "2px dashed black";
             a2.style.border = "2px dashed black";
             t.style.border = "2px dashed black";
+            aktualizujWidok(tab, "kontakt");
             break;
         case artykul1:
-            kontakt.style.display = "none";
-            artykul1.style.display = "block";
-            artykul2.style.display = "none";
-            tabela.style.display = "none";
+            aktualizujWidok(tab, "art1");
             a1.style.border = "2px dashed #228822";
             kon.style.border = "2px dashed black";
             a2.style.border = "2px dashed black";
             t.style.border = "2px dashed black";
             break;    
         case artykul2:
-            kontakt.style.display = "none";
-            artykul1.style.display = "none";
-            artykul2.style.display = "block";
-            tabela.style.display = "none";
+                aktualizujWidok(tab, "art2");
             a2.style.border = "2px dashed #228822";
             a1.style.border = "2px dashed black";
             kon.style.border = "2px dashed black";
             t.style.border = "2px dashed black";
             break;
         case tabela:
-            kontakt.style.display = "none";
-            artykul1.style.display = "none";
-            artykul2.style.display = "none";
-            tabela.style.display = "block";
+            aktualizujWidok(tab, "tab");
             t.style.border = "2px dashed #228822";
             a2.style.border = "2px dashed black";
             a1.style.border = "2px dashed black";

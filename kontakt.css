@@ -103,7 +103,7 @@
     font-size: 23px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     #o-mnie{
         min-height: 200px;
         max-width: 400px;
