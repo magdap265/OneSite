@@ -2,90 +2,86 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
 }
 
 #o-mnie{
     background: rgba(0,0,0, 0.75);
     color: #ddd;
-    min-height: 150px;
+    min-height: 300px;
     width: 100%;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
 }
 
 #o-mnie p{
     text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     padding: 5%;
 }
 
-#socilDivs {
-    text-align: justify;
+#socialDivs {
     width: 100%;
+    height: 200px;
     display: flex;
-}
-
-#socialDivs a{
-    text-decoration: none;
+    margin: 50px 0 0 0;
+    padding: 0;
+    justify-content: space-between;
 }
 
 .kafelek{
-    width: 24%;
-    height: 200px;
-    float: left;
-    margin-top: 50px;
-    margin-left: 1%;
-    text-align: center;
+    height: 150px;
+    width: 150px;
+    display: flex;
     font-size: 50px;
-    /* flex-wrap: wrap; */
+    box-sizing: border-box;
 }
 
-#mail{
-    margin-left: 0;
+a{
+    text-decoration: none;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
-.kafelek i{
-    position: relative;
-    top:70px;
-    font-size: 50px;
+i{
+    margin: auto;   
 }
 
-.kafelek:hover{
+.kafelek:hover, a:hover{
     cursor: pointer;
     color: #ddd !important;
 }
 
 
-
-#mail{
-    border: 1px solid #b23121;
+#mail a{
     color: #b23121;
+    border: 1px solid #b23121;
 }
 
-#mail:hover{
+#mail a:hover{
     background: rgba(212, 70, 56, 0.75);
 
 }
 
-#fb{
+#fb a{
     border: 1px solid #29487d;
     color: #29487d;
 }
 
-#fb:hover{
+#fb a:hover{
     background: rgba(66, 103, 178, 0.75);
 
 }
 
-#ig{
+#ig a{
     border: 1px solid #333;
     color: #333
 }
 
-#ig:hover{
+#ig a:hover{
     background: rgba(85,85,85, 0.75);
 }
 
@@ -99,26 +95,60 @@
 }
 
 #dTel{
-    margin-top: 80px;
     font-size: 23px;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px){
     #o-mnie{
+        font-size: 15px;
         min-height: 200px;
-        max-width: 400px;
-       font-size: 12px;
-        
     }
 
+    #socialDivs {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height:300px;
+
+    }
+
+   .kafelek{
+        height: 50px;
+        width: 100%;        
+        font-size: 40px;
+        margin: auto;
+
+    }
+
+    #dTel{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    #o-mnie{
+        min-height: 150px;
+        font-size: 50px;
+    }
+
+    #socialDivs {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height:300px;
+    }
+/* 
     .kafelek{
-        width: 100px;
-        height: 100px;
-    }
+        height: 50px;
+        font-size: 45px;
+        width: 100%;
+    } */
 
-    .kafelek i{
-        top: 15px;
-        font-size: 25px;
+    #dTel{
+        font-size: 20px;
     }
-    
 }

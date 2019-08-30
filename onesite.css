@@ -2,15 +2,13 @@
     margin: 0;
 }
 
-html body{
+body{
     width: 100%;
     background: url(img/background.png);
-    margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     text-align: center;
-    overflow: auto;
 }
 
 main{
@@ -34,31 +32,29 @@ footer{
     width: 100%;
     text-align: center;
     padding: 30px 0;
-    margin-top: 10px;
+    margin-top: 20px;
     color: white;
     background-color: #333;
     /* background: linear-gradient(transparent, 10%, black 100px);     */
     font-size: 15px;
-    margin-bottom: 0;
-    display:flex;
-
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 footer p{
     margin: auto auto;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 992px)  {
    body{
-        font-size: 8px;
-        max-width: 100%;
+        font-size: 50px;
+        width: 100%;
         overflow: auto;
-   }
-   main, footer{
-    max-width: 500px;
-   }
 
-   .str {
-        text-align:justify;
+   }
+   main{
+    width: 100%;
+    font-size: 50px;
    }
 }

@@ -21,10 +21,9 @@ function generatorTabeli(data, naglowki, klucze, idTabeli){
 }
 
 function wyczyscElement (idElementu){
-    let element = document.getElementById(idElementu);
-    element.innerHTML= "";
+    let aktywnyElement = document.getElementById(idElementu);
+    aktywnyElement.innerHTML= "";
 }
-
 
 function wywolanieGet (adresUrl){
     return fetch(adresUrl)
@@ -47,7 +46,7 @@ function pobierzIWyswietl (){
 }
 
 function daneDoWyslania (){
-    console.log("jestem tutaj");
+    // console.log("jestem tutaj");
     fetch("http://127.0.0.1:3000/users", {
         method: 'POST', // or 'PUT'
         body: JSON.stringify({
@@ -66,71 +65,44 @@ function daneDoWyslania (){
       .catch(error => console.error('Error:', error));
 }
 
+function aktualizujWidok(zakladki, aktywna) {
+    zakladki.forEach(zakladka => {
+        if(zakladka.id === aktywna){
+            let elementDoWyswietlenia = document.getElementById(aktywna);
+            elementDoWyswietlenia.style.display = "block";
+        } else {
+            let elementDoWyswietlenia = document.getElementById(zakladka.id);
+            elementDoWyswietlenia.style.display = "none";
+        }
+    });
+}
 
-    // let zakladki = document.getElementsByClassName("przycisk");
-    // for (zakladka of zakladki) {
-    //     console.log(zakladka);
-    //     zakladka.addEventListener("click", function() {
-    //         var current = document.getElementsByClassName("active");
-    //         current[0].className = current[0].className.replace(" active", "");
-    //         this.className += " active";
-    //         console.log(this.id);
-    //     });
-    // }
-
-    function aktualizujWidok(zakladki, aktywna) {
-        zakladki.forEach(zakladka => {
-            if(zakladka.id === aktywna){
-                let elementDoWyswietlenia = document.getElementById(aktywna);
-                elementDoWyswietlenia.style.display = "block";
-            } else {
-                let elementDoWyswietlenia = document.getElementById(zakladka.id);
-                elementDoWyswietlenia.style.display = "none";
-            }
-        });
-    }
-    
-function pokazTresc(NazwaZakladki){
-
-    let kontakt = document.getElementById("kontakt");
-    let artykul1 = document.getElementById("art1");
-    let artykul2 = document.getElementById("art2");
-    let tabela = document.getElementById("tab");  
-    let tab = [kontakt, artykul1, artykul2, tabela];
+function pokazTresc(aktywnyElement, NazwaZakladki){
+    let przyciski = document.querySelectorAll(".przycisk");
+    przyciski.forEach(przycisk => {
+        if(przycisk.id != aktywnyElement.id) {
+            przycisk.style.border = "2px dashed black";
+        }
+    })
+    aktywnyElement.style.border = "2px dashed #228822";
+    let strony = document.querySelectorAll(".str");
     
     switch(NazwaZakladki){
         case kontakt:
-            kon.style.border = "2px dashed #228822";
-            a1.style.border = "2px dashed black";
-            a2.style.border = "2px dashed black";
-            t.style.border = "2px dashed black";
-            aktualizujWidok(tab, "kontakt");
+            aktualizujWidok(strony, "kontakt");
             break;
-        case artykul1:
-            aktualizujWidok(tab, "art1");
-            a1.style.border = "2px dashed #228822";
-            kon.style.border = "2px dashed black";
-            a2.style.border = "2px dashed black";
-            t.style.border = "2px dashed black";
+        case art1:
+            aktualizujWidok(strony, "art1");
             break;    
-        case artykul2:
-                aktualizujWidok(tab, "art2");
-            a2.style.border = "2px dashed #228822";
-            a1.style.border = "2px dashed black";
-            kon.style.border = "2px dashed black";
-            t.style.border = "2px dashed black";
+        case art2:
+            aktualizujWidok(strony, "art2");
             break;
-        case tabela:
-            aktualizujWidok(tab, "tab");
-            t.style.border = "2px dashed #228822";
-            a2.style.border = "2px dashed black";
-            a1.style.border = "2px dashed black";
-            kon.style.border = "2px dashed black";
+        case tab:
+            aktualizujWidok(strony, "tab");
     }
 }
 
-function klikKontakt(){
-    
+function klikKontakt(){    
     const iconTel = document.getElementById("iTel");
     const phoneNumber = document.getElementById("dTel");
     if(phoneNumber.style.display == "none"){
